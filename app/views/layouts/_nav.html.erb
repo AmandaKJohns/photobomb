@@ -1,0 +1,19 @@
+<div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner'>
+      <div class='container'>
+        <a href='/posts' class='brand'>Selfie Booth</a>
+        <ul class='nav'>
+          <li><%= link_to 'All Photos', posts_path %></li>
+        </ul>
+        <ul class='nav pull-right'>
+          <% if user_signed_in? %>
+              <li><%= link_to current_user.first_name, user_path(current_user) %></li>
+              <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+          <% else %>
+              <li><%= link_to 'Create Account', sign_up_path %></li>
+              <li><%= link_to 'Sign In', sign_in_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
